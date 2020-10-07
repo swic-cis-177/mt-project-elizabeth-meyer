@@ -1,0 +1,40 @@
+body {
+  background-color: ivory;
+}
+form {
+  background-color: beige;
+  border: 5px dotted maroon;
+  border-radius: 1em;
+  color: maroon;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 1.1em;
+  margin: 10vmin auto;
+  padding: 1em;
+  width: 350px;
+}
+label {
+  display: inline-block;
+  text-align: right;
+  width: 90px;
+}
+input {
+  border-radius: 4px;
+  margin: 5px;
+}
+button {
+  background-color: midnightblue;
+  border: none;
+  border-radius: 4px;
+  color: ivory;
+  cursor: pointer;
+  display: block;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  margin: 5px auto;
+  padding: 5px;
+  transition: background-color 0.5s ease-in;
+}
+
+button:focus,
+button:hover {
+  background-color: steelblue;
+}
