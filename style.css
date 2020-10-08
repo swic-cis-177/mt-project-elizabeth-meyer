@@ -10,16 +10,17 @@ form {
   font-size: 1.1em;
   margin: 10vmin auto;
   padding: 1em;
-  width: 350px;
+  width: 250px;
 }
 label {
-  display: inline-block;
-  text-align: right;
-  width: 90px;
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
 }
 input {
   border-radius: 4px;
-  margin: 5px;
+  display: block;
+  margin: 5px auto;
 }
 button {
   background-color: midnightblue;
@@ -30,6 +31,7 @@ button {
   display: block;
   font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   margin: 5px auto;
+  margin-top: 20px;
   padding: 5px;
   transition: background-color 0.5s ease-in;
 }
