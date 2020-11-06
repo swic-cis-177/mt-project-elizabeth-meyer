@@ -1,16 +1,19 @@
 body {
   background-color: ivory;
+  font-family: "Source Serif Pro", serif;
 }
 form {
   background-color: beige;
-  border: 5px dotted maroon;
+  border: 1px maroon;
   border-radius: 1em;
   color: maroon;
-  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 1.1em;
-  margin: 10vmin auto;
+  margin: 5vmin auto;
   padding: 1em;
   width: 250px;
+}
+h1 {
+  color: steelblue;
+  text-align: center;
 }
 label {
   left: -9999px;
@@ -23,20 +26,19 @@ input {
   margin: 5px auto;
 }
 button {
-  background-color: midnightblue;
-  border: none;
+  background-color: steelblue;
+  border: outset;
   border-radius: 4px;
-  color: ivory;
+  color: white;
   cursor: pointer;
   display: block;
-  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   margin: 5px auto;
   margin-top: 20px;
-  padding: 5px;
+  padding: 10px;
   transition: background-color 0.5s ease-in;
 }
 
 button:focus,
 button:hover {
-  background-color: steelblue;
+  background-color: rgb(38, 118, 184);
 }
