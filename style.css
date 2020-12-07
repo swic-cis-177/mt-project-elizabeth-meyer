@@ -7,7 +7,9 @@ form {
   border: 1px maroon;
   border-radius: 1em;
   color: maroon;
+  float: left;
   margin: 5vmin auto;
+  margin-left: 10%;
   padding: 1em;
   width: 250px;
 }
