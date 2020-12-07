@@ -4,14 +4,12 @@ body {
 }
 form {
   background-color: beige;
-  border: 1px maroon;
   border-radius: 1em;
-  color: maroon;
   float: left;
   margin: 5vmin auto;
   margin-left: 10%;
   padding: 1em;
-  width: 250px;
+  width: 15%;
 }
 h1 {
   color: steelblue;
@@ -24,8 +22,10 @@ label {
 }
 input {
   border-radius: 4px;
+  color: rgb(54, 55, 59);
   display: block;
   margin: 5px auto;
+  width: 100%;
 }
 button {
   background-color: steelblue;
@@ -43,4 +43,26 @@ button {
 button:focus,
 button:hover {
   background-color: rgb(38, 118, 184);
+}
+
+table {
+  background-color: beige;
+  color: rgb(54, 55, 59);
+  float: right;
+  margin: 5vmin 10%;
+  width: 55%;
+}
+
+td {
+  padding: 2px 8px;
+}
+
+thead tr {
+  background-color: rgb(106, 172, 235);
+  color: beige;
+  font-size: 1.2em;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: white;
 }
