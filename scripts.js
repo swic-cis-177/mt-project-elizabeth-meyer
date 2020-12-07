@@ -4,6 +4,7 @@ const tbody = document.querySelector("tbody");
 const template = document.querySelector("template");
 const table = document.querySelector("table");
 const tr = document.querySelector("tr");
+const p = document.querySelector("p");
 
 const createBookTable = (data) => {
   data.forEach(({ title, author, genre, pgCount }) => {
@@ -31,4 +32,13 @@ document.querySelector("form").addEventListener("submit", (event) => {
   data.push(books);
   tbody.textContent = "";
   createBookTable(data);
+});
+
+document.getElementById("searchForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const searchTerm = document.getElementById("search").value;
+  const results = data.filter((s) => s.title.includes(searchTerm));
+  tbody.textContent = "";
+  p.textContent = "Search Results:";
+  createBookTable(results);
 });
