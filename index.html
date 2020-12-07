@@ -34,8 +34,11 @@
       <button>Enter Book</button>
     </form>
 
-    <button type="submit">Reduce Thingy</button>
-
+    <form id="searchForm">
+      <input type="text" id="search" placeholder="Search">
+      <button type="submit">Search</button>
+    </form>
+    <p></p>
     <table id="book-table">
       <thead>
         <tr>
@@ -46,12 +49,8 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Data will be 'injected' here using 'template' 👇🏽 -->
       </tbody>
     </table>
-
-    <p></p>
-
     <template id="book-row">
       <tr>
         <td></td>
@@ -61,7 +60,6 @@
       </tr>
     </template>
 
-    <!-- 'Connect' JS to this HTML file. -->
     <script src="./scripts.js" type="module"></script>
   </body>
 </html>
