@@ -33,7 +33,31 @@
       </div>
       <button>Enter Book</button>
     </form>
+
+    <table id="book-table">
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Author</td>
+          <td>Genre</td>
+          <td>Page Count</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be 'injected' here using 'template' 👇🏽 -->
+      </tbody>
+    </table>
+
+    <template id="book-row">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+
     <!-- 'Connect' JS to this HTML file. -->
-    <script src="./scripts.js"></script>
+    <script src="./scripts.js" type="module"></script>
   </body>
 </html>
