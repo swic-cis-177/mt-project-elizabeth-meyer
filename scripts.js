@@ -37,8 +37,21 @@ document.querySelector("form").addEventListener("submit", (event) => {
 document.getElementById("searchForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const searchTerm = document.getElementById("search").value;
-  const results = data.filter((s) => s.title.includes(searchTerm));
+  const results = data.filter((r) =>
+    r.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  console.log(results);
+  results.push(
+    data.filter((r) =>
+      r.author.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+  console.log(results);
   tbody.textContent = "";
   p.textContent = "Search Results:";
-  createBookTable(results);
+  if (!results[0]) {
+    createBookTable(results[0]);
+  } else {
+    createBookTable(results);
+  }
 });
