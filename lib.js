@@ -1,7 +1,13 @@
 const template = document.querySelector("template");
 const tbody = document.querySelector("tbody");
 const tr = document.querySelector("tr");
-const p = document.querySelector("p");
+const pAvg = document.getElementById("averagePageCount");
+
+const calculateAverage = (data) =>
+  data.reduce((total, { pgCount }) => {
+    total += Number(pgCount);
+    return total;
+  }, 0) / data.length;
 
 export const createBookTable = (data) => {
   data.forEach(({ title, author, genre, pgCount }) => {
@@ -16,4 +22,5 @@ export const createBookTable = (data) => {
     newBookTDs[3].textContent = pgCount;
     tbody.appendChild(newBookRow);
   });
+  pAvg.textContent = "Average Page Count: " + calculateAverage(data).toFixed(0);
 };
