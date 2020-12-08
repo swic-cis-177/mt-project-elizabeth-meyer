@@ -1,26 +1,14 @@
 import data from "./data.js";
+import { createBookTable } from "./lib.js";
 
 const tbody = document.querySelector("tbody");
-const template = document.querySelector("template");
-const table = document.querySelector("table");
-const tr = document.querySelector("tr");
 const p = document.querySelector("p");
+const displayButton = document.getElementById("displayAll");
+const tr = document.querySelector("tr");
 
-const createBookTable = (data) => {
-  data.forEach(({ title, author, genre, pgCount }) => {
-    const newBookRow = template.content.cloneNode(true);
-    const newBookTDs = newBookRow.querySelectorAll("td");
+tr.style.display = "none";
 
-    newBookTDs[0].textContent = title;
-    newBookTDs[1].textContent = author;
-    newBookTDs[2].textContent = genre;
-    newBookTDs[3].textContent = pgCount;
-    tbody.appendChild(newBookRow);
-  });
-};
-
-createBookTable(data);
-
+/* enter book */
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
   const books = Array.from(event.target.elements)
@@ -30,10 +18,12 @@ document.querySelector("form").addEventListener("submit", (event) => {
       {}
     );
   data.push(books);
+  p.textContent = "";
   tbody.textContent = "";
   createBookTable(data);
 });
 
+/* search form */
 document.getElementById("searchForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const searchTerm = document.getElementById("search").value;
@@ -55,3 +45,13 @@ document.getElementById("searchForm").addEventListener("submit", (event) => {
     createBookTable(results);
   }
 });
+
+/* display all button - idea to use 3rd parameter from https://www.w3schools.com/js/js_htmldom_eventlistener.asp */
+displayButton.addEventListener(
+  "click",
+  (event) => {
+    p.textContent = "";
+    createBookTable(data);
+  },
+  true
+);
