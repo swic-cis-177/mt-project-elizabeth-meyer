@@ -5,6 +5,7 @@ const tbody = document.querySelector("tbody");
 const p = document.querySelector("p");
 const displayButton = document.getElementById("displayAll");
 const tr = document.querySelector("tr");
+const pTotal = document.getElementById("totalPageCount");
 
 tr.style.display = "none";
 
@@ -35,6 +36,7 @@ document.getElementById("searchForm").addEventListener("submit", (event) => {
   tbody.textContent = "";
   p.textContent = "Search Results:";
   createBookTable(results);
+  pTotal.textContent = "";
 });
 
 /* display all button - idea to use 3rd parameter from https://www.w3schools.com/js/js_htmldom_eventlistener.asp */
