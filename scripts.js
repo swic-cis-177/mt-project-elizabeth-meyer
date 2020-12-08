@@ -27,23 +27,14 @@ document.querySelector("form").addEventListener("submit", (event) => {
 document.getElementById("searchForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const searchTerm = document.getElementById("search").value;
-  const results = data.filter((r) =>
-    r.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  console.log(results);
-  results.push(
-    data.filter((r) =>
+  const results = data.filter(
+    (r) =>
+      r.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       r.author.toLowerCase().includes(searchTerm.toLowerCase())
-    )
   );
-  console.log(results);
   tbody.textContent = "";
   p.textContent = "Search Results:";
-  if (!results[0]) {
-    createBookTable(results[0]);
-  } else {
-    createBookTable(results);
-  }
+  createBookTable(results);
 });
 
 /* display all button - idea to use 3rd parameter from https://www.w3schools.com/js/js_htmldom_eventlistener.asp */
@@ -51,7 +42,10 @@ displayButton.addEventListener(
   "click",
   (event) => {
     p.textContent = "";
+    tbody.textContent = "";
     createBookTable(data);
   },
   true
 );
+
+/* list by genre */
