@@ -5,11 +5,9 @@ body {
 form {
   background-color: beige;
   border-radius: 1em;
-  float: left;
-  margin: 5vmin auto;
-  margin-left: 10%;
+  display: inline-block;
+  margin-right: 10px;
   padding: 1em;
-  width: 15%;
 }
 h1 {
   color: steelblue;
@@ -48,9 +46,9 @@ button:hover {
 table {
   background-color: beige;
   color: rgb(54, 55, 59);
-  float: right;
-  margin: 5vmin 10%;
-  width: 55%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
 }
 
 td {
@@ -65,4 +63,10 @@ thead tr {
 
 tbody tr:nth-child(odd) {
   background-color: white;
+}
+
+p {
+  color: steelblue;
+  font-size: 1.5em;
+  text-align: center;
 }
