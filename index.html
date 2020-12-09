@@ -37,7 +37,7 @@
 
     <form id="searchForm">
       <input type="text" id="search" placeholder="Search">
-      <button type="submit">Search Title or Author</button>
+      <button type="submit" id="searchButton">Search Title or Author</button>
       <button type="submit" id="genreButton">Search Genre</button>
     </form>
 
@@ -59,14 +59,14 @@
     <p id="totalPageCount"></p>
 
     <table id="genre-table">
-      <thead>
+      <thead id="genre-thead">
         <tr>
           <td>Title</td>
           <td>Author</td>
           <td>Page Count</td>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="genre-tbody">
       </tbody>
     </table>
 
