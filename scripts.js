@@ -1,16 +1,18 @@
 import data from "./data.js";
-import { createBookTable } from "./lib.js";
+import { createBookTable, createGenreTable } from "./lib.js";
 
 const tbody = document.querySelector("tbody");
 const p = document.querySelector("p");
 const displayButton = document.getElementById("displayAll");
 const tr = document.querySelector("tr");
 const pTotal = document.getElementById("totalPageCount");
+const genreButton = document.getElementById("genreButton");
+const form = document.querySelector("form");
 
 tr.style.display = "none";
 
 /* enter book */
-document.querySelector("form").addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   const books = Array.from(event.target.elements)
     .filter(({ id }) => id)
@@ -24,7 +26,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
   createBookTable(data);
 });
 
-/* search form */
+/* search title or author */
 document.getElementById("searchForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const searchTerm = document.getElementById("search").value;
@@ -39,7 +41,7 @@ document.getElementById("searchForm").addEventListener("submit", (event) => {
   pTotal.textContent = "";
 });
 
-/* display all button - idea to use 3rd parameter from https://www.w3schools.com/js/js_htmldom_eventlistener.asp */
+/* display books button - idea to use 3rd parameter from "Event Bubbling or Event Capturing?" section https://www.w3schools.com/js/js_htmldom_eventlistener.asp */
 displayButton.addEventListener(
   "click",
   (event) => {
@@ -50,4 +52,24 @@ displayButton.addEventListener(
   true
 );
 
-/* list by genre */
+/* display by genre button */
+genreButton.addEventListener(
+  "click",
+  (event) => {
+    const searchGenre = document.getElementById("search").value;
+    const resultsGenre = data.filter((r) =>
+      r.genre.toLowerCase().includes(searchGenre.toLowerCase())
+    );
+    console.log(resultsGenre);
+    const newList = resultsGenre.map((f) => {
+      return { title: f.title, author: f.author, pgCount: f.pgCount };
+    });
+    console.log(newList);
+    tbody.textContent = "";
+    p.textContent = searchGenre;
+    /* use different createTable */
+    createGenreTable(resultsGenre);
+    pTotal.textContent = "";
+  },
+  true
+);
