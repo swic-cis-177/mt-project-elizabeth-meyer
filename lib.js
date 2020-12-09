@@ -3,6 +3,7 @@ const genreTemplate = document.getElementById("genre-row");
 const tbody = document.querySelector("tbody");
 const tr = document.querySelector("tr");
 const pTotal = document.getElementById("totalPageCount");
+const genreTbody = document.getElementById("genre-tbody");
 
 const pagesRead = (data) =>
   data.reduce((total, { pgCount }) => {
@@ -29,15 +30,16 @@ export const createBookTable = (data) => {
 export const createGenreTable = (data) => {
   data.forEach(({ title, author, pgCount }) => {
     const newGenreRow = genreTemplate.content.cloneNode(true);
-    /*might cause problem*/
     const newGenreTDs = newGenreRow.querySelectorAll("td");
 
     tr.style.display = "table-row";
 
+    console.log(newGenreTDs[0].textContent);
     newGenreTDs[0].textContent = title;
+    console.log(newGenreTDs[0].textContent);
     newGenreTDs[1].textContent = author;
     newGenreTDs[2].textContent = pgCount;
-    tbody.appendChild(newGenreRow);
+    genreTbody.appendChild(newGenreRow);
   });
   pTotal.textContent = pagesRead(data) + " pages read...";
 };
